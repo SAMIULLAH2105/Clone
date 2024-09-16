@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './ContactUsTwo.module.css'; // Importing our module CSS
+// import styles from '..ContactUsTwo.module.css'; // Importing our module CSS
+import styles from '../styles/ContactUsTwo.module.css'
 
 function ContactUss() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { products } from './ProductData';
-import styles from './ProductDetail.module.css'
+import styles from '../styles/ProductDetail.module.css'
 import FooterTop from './FooterTop';
 
 const ProductDetail = () => {
