@@ -1,0 +1,68 @@
+body{
+  background-color: #cccccc8c;
+}
+.container {
+  font-family: Arial, sans-serif;
+}
+
+.searchBar {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+.searchBar input {
+  width: 50%;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+}
+
+.productDetails {
+  /* background-color: #ccc; */
+  background-color:white;
+  margin: 100px 130px;
+  display: flex;
+  /* margin-top: 20px; */
+}
+
+.images {
+  flex: 1;
+}
+
+.mainImage, .hoverImage {
+  width: 100%;
+  height: auto;
+  margin: 15px;
+}
+
+.info {
+  flex: 2;
+  padding-left: 20px;
+}
+.info h1{
+  font-size: 50px;
+}
+
+.freeShipping {
+  color: green;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.notFound {
+  font-size: 24px;
+  color: red;
+  text-align: center;
+  padding: 50px;
+}

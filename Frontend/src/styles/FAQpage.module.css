@@ -1,0 +1,25 @@
+.container {
+  background-image: linear-gradient(rgba(209, 209, 209, 0.7), rgba(209, 209, 209, 0.7)),
+    url(../assets/faq.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: center;
+}
+
+.title {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 20px;
+  margin-bottom: 10px;
+}

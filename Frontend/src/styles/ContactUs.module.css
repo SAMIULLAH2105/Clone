@@ -1,0 +1,49 @@
+.container {
+    background: linear-gradient(rgba(8, 120, 140, 0.7), rgba(8, 120, 140, 0.7)),
+        url(../assets/contactus.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 50px;
+    height: 500px;
+    /* overflow: hidden; */
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 100px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.star {
+    color: orange;
+}
+
+.content {
+    width: 60%;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contactInfo {
+    font-size: 16px;
+    margin-top: 10px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.contactInfo p {
+    margin: 5px 0;
+}

@@ -1,0 +1,79 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+footer p {
+  margin: 10px;
+  font-size: 18px;
+  color: black;
+}
+
+.socialIcons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.socialIcons li {
+  margin-left: 20px;
+}
+
+.socialIcons img {
+  transition: transform 0.3s;
+}
+
+.socialIcons img:hover {
+  transform: scale(1.2);
+}
+
+/* Media queries for tablets and smaller screens */
+@media (max-width: 768px) {
+  footer {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center;
+      text-align: center;
+      padding: 20px 10px;
+  }
+
+  footer p {
+      font-size: 16px;
+      margin-bottom: 10px;
+  }
+
+  .socialIcons {
+      justify-content: center; /* Center the social icons */
+      margin-top: 10px;
+  }
+
+  .socialIcons li {
+      margin-left: 15px;
+  }
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 480px) {
+  footer {
+      padding: 15px;
+  }
+
+  footer p {
+      font-size: 14px;
+      margin-bottom: 10px;
+  }
+
+  .socialIcons li {
+      margin-left: 10px;
+  }
+
+  .socialIcons img {
+      width: 20px; /* Optionally, reduce the size of social icons */
+  }
+}

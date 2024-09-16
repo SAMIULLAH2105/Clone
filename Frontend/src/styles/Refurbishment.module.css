@@ -1,0 +1,30 @@
+.main{
+  display: flex;
+  height: 400px;
+   
+}
+.main img{
+  border-radius: 20px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+  height: 350px;
+  width:400px;
+}
+.img1{
+  height: 350px;
+  width: 550px;
+  border-radius: 20px;
+  padding:100px 160px;
+  padding-right: 30px;
+}
+.img2{
+  height: 350px;
+  width: 250px;
+  padding:100px 0px ;
+} 
+
+

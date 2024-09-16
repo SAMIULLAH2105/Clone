@@ -1,0 +1,99 @@
+.container {
+  background-image: url(../assets/descriptionBG.jpg);
+  background-size: cover;
+  background-position: 28.999999999999996% 69%;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.705); /* Adds a slight white overlay on text */
+  padding: 380px;
+  padding-top: 140px;
+  padding-left: 150px;
+  border-radius: 10px;
+}
+
+/* Adjust font sizes for smaller screens */
+h1 {
+  font-size: 4em;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 5px 0;
+  color: grey;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.contactButton {
+  background-color: #007bff;
+  color: white;
+  margin-top: 50px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.contactButton:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .content {
+      padding: 200px 50px; /* Reduce padding for smaller screens */
+      padding-top: 80px;
+      padding-left: 50px;
+  }
+
+  h1 {
+      font-size: 3em; /* Reduce heading size on smaller screens */
+  }
+
+  h2 {
+      font-size: 1.2em;
+  }
+
+  p {
+      font-size: 1em;
+  }
+
+  .contactButton {
+      font-size: 1.2em;
+      padding: 8px 15px; /* Adjust button size */
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+      padding: 100px 30px; /* Further reduce padding for very small screens */
+      padding-top: 60px;
+      padding-left: 30px;
+  }
+
+  h1 {
+      font-size: 2.5em;
+  }
+
+  h2 {
+      font-size: 1em;
+  }
+
+  p {
+      font-size: 0.9em;
+  }
+
+  .contactButton {
+      font-size: 1em;
+      padding: 6px 12px;
+  }
+}

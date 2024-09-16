@@ -1,0 +1,73 @@
+
+.mainHead {
+  margin: auto;
+  color: #0a0a0a;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.inquiry {
+  max-width: 450px;
+  background-color: #2b9cc7; /* Close to the blue shade in the image */
+  padding: 30px;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.inquiry label {
+  font-size: 16px;
+  color: white; /* Label text color similar to image */
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 600;
+}
+
+.inquiry input, .inquiry textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #66b9da; /* Light blue input background */
+  color: white; /* Text color in inputs */
+}
+
+.inquiry input::placeholder, .inquiry textarea::placeholder {
+  color: #d9e3ef; /* Placeholder text color */
+}
+
+.inquiry input:focus, .inquiry textarea:focus {
+  outline: none;
+  background-color: #58a7c2; /* Slightly darker blue on focus */
+}
+
+.inquiry textarea {
+  height: 100px; /* Adjust height for textarea */
+}
+
+.inquiry button {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inquiry button:hover {
+  background-color: #555;
+}
+
+.inquiry button:active {
+  background-color: #222;
+}
+
+.inquiry button:focus {
+  outline: none;
+}

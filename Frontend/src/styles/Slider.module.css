@@ -1,0 +1,44 @@
+/* BrandSlider.module.css */
+.sliderContainer {
+    width: 100%;
+    padding: 2.5rem 0;
+   /* Adjust top/bottom padding */
+  }
+  
+  .sliderImage {
+    height: 130px; /* Set the height for each image */
+  }
+  
+  .customArrow {
+    z-index: 2; /* Ensure the arrow stays above the images */
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Absolute positioning to control placement */
+    top: 50%; /* Align vertically to center */
+    transform: translateY(-50%); /* Center the arrow vertically */
+    cursor: pointer;
+    color: white;
+  }
+  
+  .customArrow:hover {
+    background-color: rgba(0, 0, 0, 1); /* Fully black background on hover */
+  }
+  
+  .customArrow:before {
+    font-size: 20px;
+    color: white;
+  }
+  
+  .customPrev {
+    left: -45px; /* Adjust the left arrow position */
+  }
+  
+  .customNext {
+    right: -45px; /* Adjust the right arrow position */
+  }
+  
