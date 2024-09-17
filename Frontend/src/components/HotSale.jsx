@@ -8,7 +8,7 @@ import styles from "../styles/HotSale.module.css";
 const HotSaleProducts = () => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>Hot Sale Products</h2>
+      <h2 className={styles.heading}>HOT SALE PRODUCTS</h2>
       <div className={styles.products}>
         <div className={styles.product}>
           <img src={imageSrc1} alt="HOWO 6x4 Dump Truck" />

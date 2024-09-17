@@ -17,10 +17,10 @@ const Refurbishment = () => (
         className={styles.img2}
       />
       <div className={styles.container}>
-        <h3>Professional truck refurbishment factory</h3>
-        We strictly control product quality to ensure that every truck and
+        <h2>Professional truck refurbishment factory</h2>
+        <p>We strictly control product quality to ensure that every truck and
         trailer meets international standards and the highest industry
-        requirements before delivery to customers.
+        requirements before delivery to customers.</p>
       </div>
     </div>
   </>
