@@ -1,19 +1,33 @@
 import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 import CardComponent from '../components/CardComponent';
 import FooterTop from '../components/FooterTop';
 
-function Product() {
+function ProductPage() {
+  const { filteredProducts } = useOutletContext(); // Get filtered products from context
+
   return (
     <>
-        <div className="product" style={{textAlign:"center"}}>
-      <h1>Our Products</h1>
-     
-    </div>
-    <CardComponent/>
-    <FooterTop/>
+      <div className="product" style={{ textAlign: "center" }}>
+        <h1
+          style={{
+            minHeight: "200px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "50px",
+            fontFamily: "'Playfair Display', serif",
+            marginBottom: "0",
+            backgroundColor: "#e7eaec",
+          }}
+        >
+          Products
+        </h1>
+      </div>
+      <CardComponent products={filteredProducts} /> {/* Display the filtered or default product array */}
+      <FooterTop />
     </>
-
   );
 }
 
-export default Product;
+export default ProductPage;

@@ -1,23 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   background-image: url(../assets/descriptionBG.jpg);
   background-size: cover;
   background-position: 28.999999999999996% 69%;
   background-attachment: scroll;
   background-repeat: no-repeat;
-  border-radius: 10px;
+ 
+  
+ 
 }
 
 .content {
   background-color: rgba(255, 255, 255, 0.705); /* Adds a slight white overlay on text */
-  padding: 380px;
-  padding-top: 140px;
-  padding-left: 150px;
-  border-radius: 10px;
+  
+  padding-top: 120px;
+  padding-left: 100px;
+  height: 40vw;
+ 
+ 
+  text-align: left;
+   width: 100%;
+ 
 }
 
 /* Adjust font sizes for smaller screens */
-h1 {
-  font-size: 4em;
+.content h1 {
+  font-size: clamp(2.5rem, 1.456rem + 3.26vw, 4rem);
   margin: 10px 0;
 }
 
@@ -28,22 +40,20 @@ h2 {
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 4em;
   margin-bottom: 20px;
 }
 
 .contactButton {
-  background-color:#2596be;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #007bff;
   color: white;
   margin-top: 50px;
-  padding: 15px 30px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 35px;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 1.5em;
+ 
 }
 
 .contactButton:hover {
@@ -59,7 +69,7 @@ p {
   }
 
   h1 {
-      font-size: 3em; /* Reduce heading size on smaller screens */
+      font-size: 1em; /* Reduce heading size on smaller screens */
   }
 
   h2 {

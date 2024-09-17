@@ -16,25 +16,25 @@ const Professinalism = ({ imageSrc }) => {
           </h2>
           <ul>
             <li>
-              <h4>01</h4>
+              <h4>01    <strong>Customer customized service</strong> </h4>
               <p>
-                <strong>Customer customized service</strong>
+             
                 <br />
                 We not only sell new and used trucks and trailers, but also provide customized services according to customer needs.
               </p>
             </li>
             <li>
-              <h4>02</h4>
+              <h4>02   <strong>Strong sales and service</strong></h4>
               <p>
-                <strong>Strong sales and service</strong>
+              
                 <br />
                 We have established a strong sales and service network in major market areas such as Africa and South America.
               </p>
             </li>
             <li>
-              <h4>03</h4>
+              <h4>03   <strong>Professional quality control</strong></h4>
               <p>
-                <strong>Professional quality control</strong>
+              
                 <br />
                 We have an experienced team of professionals specializing in new trucks and refurbished used trucks with more than ten years of industry experience.
               </p>

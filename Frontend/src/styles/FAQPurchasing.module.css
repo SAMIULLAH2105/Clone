@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    gap: 50px;
+    padding: 10px;
+    margin: 50px 0;
+}
+
+.leftSection {
+    flex: 1;
+}
+
+.rightSection {
+    flex: 1;
+    font-size: 20px;
+    max-width: 330px;
+    height: 560px;
+    background-color: #2596be;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 22px;
+    padding: 10px;
+    margin-bottom: 22px;
+}
+
+.questions {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.faqItem {
+    margin-bottom: 20px;
+}
+
+.faqItem h2:hover {
+    color: #2596be;
+}
+
+.faqTitle {
+    color: #000000b7;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 2px;
+    border-bottom: 1px solid #cfcfcfac;
+}
+
+.faqContent {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.rightSection label {
+    display: block;
+    padding: 0 10px;
+    margin: 10px 0 5px;
+    color: white;
+}
+
+.rightSection input,
+.rightSection textarea {
+    width: 300px;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid #cfcfcfc2;
+    background-color: #2596be;
+    color: #ffffff;
+    outline: none;
+}
+
+.rightSection input {
+    height: 20px;
+}
+
+.rightSection textarea {
+    height: 100px;
+}
+
+.requiredAsterisk {
+    color: red;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.rightSection button {
+    background-color: #1A202C;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
