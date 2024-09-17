@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/ContactForm.module.css";
 
-function ContactForm() {
+function ContactForm({heading}) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -42,7 +42,7 @@ function ContactForm() {
 
   return (
     <>
-    <h2 className={styles.mainHead}>PLEASE CONTACT US</h2>
+    <h2 className={styles.mainHead}>{heading}</h2>
     <form onSubmit={handleSubmit} className={styles.inquiry}>
       
       <label htmlFor="name">Your Name *</label>

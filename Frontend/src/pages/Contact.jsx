@@ -11,7 +11,7 @@ function Contact() {
     <div className="contact">
       <ContactUss/>
       
-      <ContactForm/>
+      <ContactForm heading={"PLEASE CONTACT US"}/>
       <FooterTop/>
     </div>
     
