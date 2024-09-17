@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/Description.module.css';
+import { FaArrowDown } from "react-icons/fa";
 
 const Description = ({ heading, subheading, description, buttonText }) => {
   return (
@@ -11,7 +12,7 @@ const Description = ({ heading, subheading, description, buttonText }) => {
 
       
         {buttonText && (
-          <button  className={styles.contactButton}>{buttonText}</button>
+          <button  className={styles.contactButton}><FaArrowDown />{buttonText}</button>
         )}
       </div>
     </div>

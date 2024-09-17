@@ -8,7 +8,7 @@ import Services from './pages/Services';
 import FAQ from './pages/FAQ';
 import About from './pages/About';
 import Product from './pages/Product';
-import ProductDetail from './Components/ProductDetail'; 
+import ProductDetail from './components/ProductDetail'; 
 
 // Import the new ProductDetail component
 

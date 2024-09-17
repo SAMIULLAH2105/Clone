@@ -33,12 +33,15 @@ p {
 }
 
 .contactButton {
-  background-color: #007bff;
+  background-color:#2596be;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   margin-top: 50px;
-  padding: 10px 20px;
+  padding: 15px 30px;
   border: none;
-  border-radius: 25px;
+  border-radius: 35px;
   cursor: pointer;
   font-size: 1.5em;
 }
