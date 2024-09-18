@@ -24,7 +24,7 @@ function FAQPurchasing() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const whatsappNumber = '923331234567'; // Your WhatsApp number
+        const whatsappNumber = '923363653236'; // Your WhatsApp number
         const encodedMessage = encodeURIComponent(`Name: ${name}\nWhatsApp: ${whatsapp}\nMessage: ${message}`);
         const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
         window.open(url, '_blank');
