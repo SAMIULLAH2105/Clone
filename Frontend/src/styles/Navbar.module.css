@@ -17,6 +17,7 @@
 }
 
 .navbarLogo {
+  padding-left: 150px;
   display: flex;
   align-items: center;
 
@@ -53,6 +54,8 @@
 .navList {
   display: flex;
   list-style-type: none;
+  
+  font-family: 'Inter',sans-serif;
   margin: 0;
   padding: 0;
 }

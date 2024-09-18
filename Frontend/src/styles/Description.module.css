@@ -17,17 +17,17 @@
 .content {
   background-color: rgba(255, 255, 255, 0.705); /* Adds a slight white overlay on text */
   
-  padding-top: 120px;
-  padding-left: 100px;
+  padding-top: 160px;
+  padding-left: 160px ;
   height: 40vw;
  
  
   text-align: left;
-   width: 100%;
+   /* width: 100%; */
  
 }
 .content h2{
-  color: black;
+  color: rgba(0, 0, 0, 0.692);
 }
 
 /* Adjust font sizes for smaller screens */
@@ -44,10 +44,14 @@ h2 {
 
 p {
   font-size: 4em;
+  color: rgba(0, 0, 0, 0.792);
   margin-bottom: 20px;
 }
 
 .contactButton {
+  display: flex;
+  gap:12px;
+  align-items: center;
   background-color: #2596be;
   color: white;
   margin-top: 50px;

@@ -3,6 +3,10 @@ import Description from '../components/Description';
 import AdvantagesSection from '../components/AdvantagesSection';
 import Slider from '../components/Slider';
 import Professionalism from '../components/Professionalism'
+import AboutHeader from '../components/AboutHeader';
+import FooterTop from '../components/FooterTop'
+
+import imageSrc1 from "../assets/HotSaleOne.jpg";
 
 const middlesSction={
   display:"flex",
@@ -14,13 +18,10 @@ const middlesSction={
 function About() {
   return (
     <>
+    <AboutHeader heading="ABOUT US" text="Our products cover all types of trucks and trailers, which are widely used in engineering construction, cargo transportation and other fields. Whether it is heavy-load transportation or complex road conditions, our equipment can provide the best performance." />
+    
     <div className="about">
-<Description 
-  heading="About Us" 
-  subheading="Professional Truck Export Company" 
-  description="We are a construction equipment sales business focused on providing high quality, high performance new and used trucks and trailers." 
-  buttonText="Contact Us"  
-  />
+
 
     </div>
     <div style={middlesSction}>
@@ -29,7 +30,10 @@ function About() {
     
 
     </div>
+    
     <Professionalism imageSrc="src/assets/products/bigredTruck.jpg"/>
+    <FooterTop/>
+    
 
  </>
   );
