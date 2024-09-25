@@ -22,3 +22,6 @@
   opacity: 0.4;
   z-index: -1;
 }
+.textBlock{
+  width: 600px;
+}

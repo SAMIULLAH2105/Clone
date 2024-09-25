@@ -6,7 +6,7 @@ function ContactUss() {
   return (
     <div className={styles.container}>
       <h2>Contact Us</h2>
-      <p>To find out more about how we can assist you with your engineering equipment needs...</p>
+      <p>to find out more about how we can assist you with your engineering equipment needs. Our team is ready to provide you with personalized attention and help you select the best solutions for your requirements.</p>
       <div className={styles.contactInfo}>
         <div className={styles.contactItem}>
           <span className="material-icons">Email</span>

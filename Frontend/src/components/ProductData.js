@@ -4,15 +4,15 @@ export const products = [
   { 
     id: 1, 
     name: 'HOWO 6X4 DUMP TRUCK', 
-    image1: 'src/assets/products/whiteTruckLeft.jpg', 
-    image2: 'src/assets/products/whiteTruckRight.jpg',
+    image1: '../src/assets/products/whiteTruckLeft.jpg', 
+    image2: '../src/assets/products/whiteTruckRight.jpg',
     description: 'This 6x4 dump truck is designed for heavy-duty transport and construction tasks, featuring robust construction and high payload capacities.'
   },
   { 
     id: 2, 
     name: 'HOWO 6X4 DUMP TRUCK MIDDLE LIFTING', 
-    image1: 'src/assets/products/whiteTruckRight.jpg', 
-    image2: 'src/assets/products/whiteTruckLeft.jpg',
+    image1: '../src/assets/products/whiteTruckRight.jpg', 
+    image2: '../src/assets/products/whiteTruckLeft.jpg',
     description: 'Engineered for efficiency, this middle-lifting dump truck offers superior maneuverability and durability in challenging environments.'
   },
   { 

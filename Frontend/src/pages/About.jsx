@@ -7,6 +7,7 @@ import AboutHeader from '../components/AboutHeader';
 import FooterTop from '../components/FooterTop'
 
 import imageSrc1 from "../assets/HotSaleOne.jpg";
+import HotSaleProducts from '../components/HotSale';
 
 const middlesSction={
   display:"flex",
@@ -32,6 +33,7 @@ function About() {
     </div>
     
     <Professionalism imageSrc="src/assets/products/bigredTruck.jpg"/>
+    <HotSaleProducts/>
     <FooterTop/>
     
 
