@@ -1,64 +1,131 @@
-
-
-.main{
+.main {
   display: flex;
   align-items: center;
-  padding-left: 100px;
   justify-content: center;
+  padding-left: 100px;
   height: 30%;
   background-color: #ffff;
-   
 }
-.main img1{
-  border-radius: 20px;
+
+/* Image styling */
+.img1 {
+  height: 342px;
+  width: 515px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 36px;
 }
-.container{
+
+.img2 {
+  height: 340px;
+  width: 227px;
+  border-radius: 10px;
+  margin-right: 76px;
+  overflow: hidden;
+}
+
+/* Set images to fill their containers */
+.img2 img,
+.img1 img {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 100px;
   height: 550px;
-  width:400px;
+  width: 400px;
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
   line-height: 1.6;
-  font-family:Inter, sans-serif;
+  font-family: Inter, sans-serif;
 }
-.container h2{
+
+.container h2 {
   color: black;
 }
-.container p{
+
+.container p {
   padding-left: 10px;
 }
-.img1{
-  height: 342px;
-  width: 515px;
-  border-radius: 10px;
- 
-  overflow: hidden;
-  margin-right: 36px;
-  margin-left: 36px;
- 
-  
-}
-.img2{
-  height: 340px;
-  width: 227px;
 
-  overflow: hidden;
-  border-radius: 10px;
-  margin-right: 76px;
-  
-} 
-.img2 img{
- height: 100%;
- width: 100%;
-}
-.img1 img{
-  height: 100%;
-  width: 100%;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main {
+    padding-left: 50px;
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 50px;
+    width: 100%;
+  }
+
+  .img1 {
+    height: 300px;
+    width: 450px;
+    margin: 20px 0;
+  }
+
+  .img2 {
+    height: 280px;
+    width: 200px;
+    margin-right: 20px;
+  }
 }
 
+@media (max-width: 768px) {
+  .main {
+    padding-left: 20px;
+  }
 
+  .container {
+    padding: 30px;
+    width: 100%;
+  }
+
+  .img1 {
+    height: 250px;
+    width: 400px;
+  }
+
+  .img2 {
+    height: 240px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding-left: 0;
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 20px;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .img1,
+  .img2 {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .container h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .container p {
+    padding-left: 0;
+    text-align: center;
+  }
+}

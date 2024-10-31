@@ -2,17 +2,17 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from '../styles/Slider.module.css';
+import styles from "../styles/Slider.module.css";
 
 // Custom Next Arrow Component
 const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className={`${styles.customArrow} ${styles.customNext}`} // Apply custom arrow styles
+      className={`${styles.customArrow} ${styles.customNext}`}
       onClick={onClick}
     >
-      <span>&#9654;</span> {/* Right Arrow (triangle) */}
+      <span>&#9654;</span> {/* Right Arrow */}
     </div>
   );
 };
@@ -22,10 +22,10 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
-      className={`${styles.customArrow} ${styles.customPrev}`} // Apply custom arrow styles
+      className={`${styles.customArrow} ${styles.customPrev}`}
       onClick={onClick}
     >
-      <span>&#9664;</span> {/* Left Arrow (triangle) */}
+      <span>&#9664;</span> {/* Left Arrow */}
     </div>
   );
 };
@@ -49,8 +49,8 @@ const BrandSlider = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    nextArrow: <NextArrow />, // Custom next arrow
-    prevArrow: <PrevArrow />, // Custom prev arrow
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -67,7 +67,7 @@ const BrandSlider = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Show 1 logo at a time on mobile
         },
       },
     ],
@@ -77,11 +77,11 @@ const BrandSlider = () => {
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
         {brands.map((brand) => (
-          <div key={brand.id} className="px-4">
+          <div key={brand.id} className={styles.slide}>
             <img
               src={brand.logo}
               alt={brand.alt}
-              className={`mx-auto ${styles.sliderImage}`} // Apply the height from CSS Module
+              className={styles.sliderImage}
             />
           </div>
         ))}

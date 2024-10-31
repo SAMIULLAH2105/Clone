@@ -103,5 +103,9 @@ h2 {
     cursor: pointer;
 }
 
-
-
+.rightSection button img {
+    width: 28px;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+}
