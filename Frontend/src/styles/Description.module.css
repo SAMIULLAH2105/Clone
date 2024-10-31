@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -9,24 +9,26 @@
   background-position: 28.999999999999996% 69%;
   background-attachment: scroll;
   background-repeat: no-repeat;
- 
-  
- 
+
+
+
 }
 
 .content {
-  background-color: rgba(255, 255, 255, 0.705); /* Adds a slight white overlay on text */
-  
+  background-color: rgba(255, 255, 255, 0.705);
+  /* Adds a slight white overlay on text */
+
   padding-top: 160px;
-  padding-left: 160px ;
+  padding-left: 160px;
   height: 40vw;
- 
- 
+
+
   text-align: left;
-   /* width: 100%; */
- 
+  /* width: 100%; */
+
 }
-.content h2{
+
+.content h2 {
   color: rgba(0, 0, 0, 0.692);
 }
 
@@ -50,7 +52,7 @@ p {
 
 .contactButton {
   display: flex;
-  gap:12px;
+  gap: 12px;
   align-items: center;
   background-color: #2596be;
   color: white;
@@ -60,61 +62,49 @@ p {
   border-radius: 35px;
   cursor: pointer;
   font-size: 1.5em;
- 
+
 }
 
 .contactButton:hover {
   background-color: #0056b3;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .content {
-      padding: 200px 50px; /* Reduce padding for smaller screens */
-      padding-top: 80px;
-      padding-left: 50px;
-  }
-
-  h1 {
-      font-size: 1em; /* Reduce heading size on smaller screens */
-  }
-
-  h2 {
-      font-size: 1.2em;
-      color: black;
-  }
-
-  p {
-      font-size: 1em;
-  }
-
-  .contactButton {
-      font-size: 1.2em;
-      padding: 8px 15px; /* Adjust button size */
-  }
-}
-
 @media (max-width: 480px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+  }
+
   .content {
-      padding: 100px 30px; /* Further reduce padding for very small screens */
-      padding-top: 60px;
-      padding-left: 30px;
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.705);
+
   }
 
   h1 {
-      font-size: 2.5em;
+    font-size: 1.8rem;
   }
 
   h2 {
-      font-size: 1em;
+    font-size: 1.1em;
   }
 
   p {
-      font-size: 0.9em;
+    font-size: 0.9em;
   }
 
   .contactButton {
-      font-size: 1em;
-      padding: 6px 12px;
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-top: 20px;
   }
 }

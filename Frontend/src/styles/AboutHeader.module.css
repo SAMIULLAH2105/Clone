@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 20px;
 }
 
 .container::before {
@@ -16,12 +17,54 @@
   height: 100%;
   background-image: url(../assets/descriptionBG.jpg);
   background-size: cover;
-  background-position: 28.999999999999996% 69%;
+  background-position: 29% 69%;
   background-attachment: scroll;
   background-repeat: no-repeat;
   opacity: 0.4;
   z-index: -1;
 }
-.textBlock{
-  width: 600px;
+
+.textBlock {
+  max-width: 600px;
+  padding: 20px;
+  color: #333;
+}
+
+/* Media Query for Tablets */
+@media (max-width: 768px) {
+  .container {
+    height: 350px;
+    /* Adjust height for smaller screens */
+    padding: 15px;
+  }
+
+  .container::before {
+    background-position: center;
+    /* Center background image */
+    opacity: 0.5;
+    /* Increase opacity for better readability */
+  }
+
+  .textBlock {
+    width: 90%;
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .container {
+    height: 300px;
+    /* Further reduce height for mobile */
+    padding: 10px;
+  }
+
+  .container::before {
+    background-size: cover;
+    opacity: 0.6;
+    /* Slightly more opacity to enhance text readability */
+  }
+
+  .textBlock {
+    width: 100%;
+  }
 }
