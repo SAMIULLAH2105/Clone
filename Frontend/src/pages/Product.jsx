@@ -18,7 +18,7 @@ function ProductPage() {
             fontSize: "50px",
             fontFamily: "'Playfair Display', serif",
             marginBottom: "0",
-            marginTop:"100px",
+            marginTop:"85px",
             backgroundColor: "#e7eaec",
           }}
         >

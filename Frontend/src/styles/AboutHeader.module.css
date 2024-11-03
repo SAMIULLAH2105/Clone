@@ -35,6 +35,7 @@
 @media (max-width: 768px) {
   .container {
     height: 350px;
+    margin-top: 80px;
     /* Adjust height for smaller screens */
     padding: 15px;
   }

@@ -81,6 +81,15 @@
   
 
 }
+@media (max-width: 780px){
+  .container{
+    margin-top: 70px;
+  }
+  
+  
+  
+
+}
 
 @media (max-width: 480px){
   .container p{
