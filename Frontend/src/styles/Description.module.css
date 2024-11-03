@@ -4,6 +4,7 @@
 }
 
 .container {
+  margin-top: 120px;
   background-image: url(../assets/descriptionBG.jpg);
   background-size: cover;
   background-position: 28.999999999999996% 69%;
