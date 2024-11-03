@@ -70,15 +70,17 @@ p {
 }
 
 @media (max-width: 480px) {
+
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 125px;
 
   }
 
   .content {
+    font-size: 10px;
     width: 90%;
     padding: 20px;
     text-align: center;
@@ -90,7 +92,7 @@ p {
 
   }
 
-  h1 {
+  /* h1 {
     font-size: 1.8rem;
   }
 
@@ -100,11 +102,47 @@ p {
 
   p {
     font-size: 0.9em;
-  }
+  } */
+   h1,h2{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 10px;
+    color: red;
+   }
+   p{
+    margin-left: 20%;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+   }
 
   .contactButton {
-    font-size: 1em;
-    padding: 10px 20px;
-    margin-top: 20px;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 0;
   }
+}
+@media (max-width: 780px){
+  h1,h2,p{
+    font-size: 10px;
+  }
+  .content h1{
+    font-size: 20px;
+  }
+  .content h2{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 15px;
+
+  }
+  .content p{
+    font-size: 10px;
+    margin-right: 10%;
+    padding-right: 20%;
+  }
+  .contactButton {
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 0;
+  }
+
 }

@@ -9,13 +9,7 @@ import FooterTop from '../components/FooterTop'
 import imageSrc1 from "../assets/HotSaleOne.jpg";
 import HotSaleProducts from '../components/HotSale';
 
-const middlesSction={
-  display:"flex",
-  flexDirection:"column",
-  alignItem:"center",
-  padding:"200px"
-  
-}
+
 function About() {
   return (
     <>
@@ -25,7 +19,8 @@ function About() {
 
 
     </div>
-    <div style={middlesSction}>
+    <div >
+      
     <AdvantagesSection/>
     <Slider/>
     

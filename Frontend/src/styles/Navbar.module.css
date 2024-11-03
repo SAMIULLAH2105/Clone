@@ -123,6 +123,7 @@
 }
 
 .hamburger {
+  margin-right: 50px;
   display: none;
   flex-direction: column;
   justify-content: left;
@@ -192,6 +193,7 @@
   }
 
   .hamburger {
+    margin-right: 50px;
     display: flex;
     align-items: end;
 
@@ -204,6 +206,7 @@
     font-size: 1.5rem;
   }
 
+
   .navLink {
     font-size: 1rem;
     padding: 0.6rem;
@@ -212,5 +215,11 @@
   .searchButton {
     margin: 0;
     padding: 0.5rem;
+  }
+  .hamburger{
+    margin-right: 50px;
+  }
+  .navbarLogo img{
+    width:100px;
   }
 }

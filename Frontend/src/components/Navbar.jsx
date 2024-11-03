@@ -30,12 +30,14 @@ const Navbar = ({ onSearch }) => {
 
   return (
     <header className={styles.navbar}>
+      
       <div className={styles.navbarLogo}>
         <Link className={styles.logoPlaceholder} to="/">
           <img src="../src/assets/smLogo.png" alt="Logo" />
         </Link>
-      </div>
-      <button
+
+
+        <button
         className={styles.hamburger}
         aria-label="Toggle navigation"
         onClick={handleNavToggle}
@@ -44,6 +46,9 @@ const Navbar = ({ onSearch }) => {
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </button>
+      </div>
+
+      
       <nav className={`${styles.navbarNav} ${isNavOpen ? styles.open : ""}`}>
         <ul className={styles.navList}>
           {["Home", "About", "Product", "Services", "Contact", "FAQ"].map(

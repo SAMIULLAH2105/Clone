@@ -70,6 +70,7 @@ function FAQPurchasing() {
           ))}
         </div>
       </div>
+      
       <div className={styles.rightSection}>
         <h2>If you are interested, please contact us</h2>
         <form onSubmit={handleSubmit}>
