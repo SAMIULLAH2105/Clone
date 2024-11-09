@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
 import "../styles/searchOverlay.css";
 import { products } from "./ProductData"; // Importing products array
+import Brand from './Brand';
 
 const Navbar = ({ onSearch }) => {
   const location = useLocation();
@@ -25,17 +26,12 @@ const Navbar = ({ onSearch }) => {
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
     onSearch(filteredProducts); // Send the filtered products to the parent component
-    setIsSearchOpen(false); // Close the search overlay after searching
+    setIsSearchOpen(false); // Close the search overlay after searching 
   };
 
   return (
     <header className={styles.navbar}>
-      
-      <div className={styles.navbarLogo}>
-        <Link className={styles.logoPlaceholder} to="/">
-          <img src="../src/assets/smLogo.png" alt="Logo" />
-        </Link>
-
+      <Brand />       {/* Brand component */}
 
         <button
         className={styles.hamburger}
@@ -46,9 +42,7 @@ const Navbar = ({ onSearch }) => {
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </button>
-      </div>
 
-      
       <nav className={`${styles.navbarNav} ${isNavOpen ? styles.open : ""}`}>
         <ul className={styles.navList}>
           {["Home", "About", "Product", "Services", "Contact", "FAQ"].map(

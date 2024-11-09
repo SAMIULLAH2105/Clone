@@ -1,0 +1,37 @@
+.navbarLogo {
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.logoPlaceholder {
+    width: 150px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.logoPlaceholder img {
+    height: 100%;
+    width: 100%;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .navbarLogo {
+        padding-left: 1rem;
+        width: 100%;
+        justify-content: center;
+        gap: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbarLogo img {
+        width: 120px;
+    }
+}

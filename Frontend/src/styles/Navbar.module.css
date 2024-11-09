@@ -26,37 +26,6 @@
   z-index: 1000;
 }
 
-
-.navbarLogo {
-  padding-left: 150px;
-  display: flex;
-  align-items: center;
-
-}
-
-.logoPlaceholder {
-  width: 160px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-  font-size: 0.875rem;
-  color: #666;
-}
-
-.logoPlaceholder>img {
-  height: 100%;
-  width: 100%;
-}
-
-.navbarTitle {
-  font-size: 1.95rem;
-  font-weight: bold;
-  color: var(--text-color);
-  margin: 0;
-}
-
 .navbarNav {
   display: flex;
   align-items: center;
@@ -103,20 +72,6 @@
   border: none;
 }
 
-/* .searchButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  padding-right: 150px;
-  margin-left: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
-  color: #333;
-} */
-
 .searchButton:hover {
   background-color: var(--hover-color);
   border-radius: 50%;
@@ -150,16 +105,6 @@
     align-items: flex-start;
     height: auto;
     padding: 1rem;
-  }
-
-  .navbarLogo {
-    padding-left: 0;
-    width: 100%;
-    gap: 50%;
-  }
-
-  .navbarTitle {
-    font-size: 1.75rem;
   }
 
   .navbarNav {
@@ -202,11 +147,6 @@
 }
 
 @media (max-width: 480px) {
-  .navbarTitle {
-    font-size: 1.5rem;
-  }
-
-
   .navLink {
     font-size: 1rem;
     padding: 0.6rem;
@@ -218,8 +158,5 @@
   }
   .hamburger{
     margin-right: 50px;
-  }
-  .navbarLogo img{
-    width:100px;
   }
 }
