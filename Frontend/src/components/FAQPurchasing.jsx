@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/FAQPurchasing.module.css";
 import WhatsAppIcon from "../assets/whatsapp.svg";
+import { useTheme } from "./Theme"; 
 
 function FAQItem({ title, content, isOpen, onToggle }) {
   return (
@@ -14,6 +15,7 @@ function FAQItem({ title, content, isOpen, onToggle }) {
 }
 
 function FAQPurchasing() {
+  const { theme } = useTheme();
   const [activeIndex, setActiveIndex] = useState(0);
   const [name, setName] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -71,7 +73,7 @@ function FAQPurchasing() {
         </div>
       </div>
       
-      <div className={styles.rightSection}>
+      <div className={styles.rightSection} style={{ backgroundColor: theme.primaryColor }}>
         <h2>If you are interested, please contact us</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Your Name</label>
@@ -81,6 +83,7 @@ function FAQPurchasing() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            style={{ backgroundColor: theme.primaryColor }}
           />
 
           <label htmlFor="whatsapp">
@@ -92,6 +95,7 @@ function FAQPurchasing() {
             value={whatsapp}
             onChange={(e) => setWhatsapp(e.target.value)}
             required
+            style={{ backgroundColor: theme.primaryColor }}
           />
 
           <label htmlFor="message">
@@ -102,6 +106,7 @@ function FAQPurchasing() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
+            style={{ backgroundColor: theme.primaryColor }}
           />
 
           <button type="submit">

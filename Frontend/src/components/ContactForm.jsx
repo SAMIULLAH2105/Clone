@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/ContactForm.module.css";
+import { useTheme } from "../components/Theme";
 
 function ContactForm({heading}) {
+  const { theme } = useTheme();  // Destructure theme from the useTheme hook
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -42,8 +44,8 @@ function ContactForm({heading}) {
 
   return (
     <>
-    <h2 className={styles.mainHead}>{heading}</h2>
-    <form onSubmit={handleSubmit} className={styles.inquiry}>
+    <h2 className={styles.mainHead} >{heading}</h2>
+    <form onSubmit={handleSubmit} className={styles.inquiry} style={{ backgroundColor: theme.primaryColor }}>
       
       <label htmlFor="name">Your Name *</label>
       <input
@@ -53,6 +55,7 @@ function ContactForm({heading}) {
         value={formData.name}
         onChange={handleChange}
         required
+        style={{ backgroundColor: theme.primaryColor }}
       />
       <label htmlFor="email">Email*</label>
       <input
@@ -61,6 +64,7 @@ function ContactForm({heading}) {
         value={formData.email}
         onChange={handleChange}
         required
+        style={{ backgroundColor: theme.primaryColor }}
       />
       <label htmlFor="whatsappNumber">WhatsApp number *</label>
       <input
@@ -70,6 +74,7 @@ function ContactForm({heading}) {
         value={formData.whatsappNumber}
         onChange={handleChange}
         required
+        style={{ backgroundColor: theme.primaryColor }}
       />
 
       <label htmlFor="message">Message *</label>
@@ -81,6 +86,7 @@ function ContactForm({heading}) {
         value={formData.message}
         onChange={handleChange}
         required
+        style={{ backgroundColor: theme.primaryColor }}
       />
 
       <button type="submit">Send Message</button>

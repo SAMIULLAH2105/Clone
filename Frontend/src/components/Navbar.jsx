@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
 import "../styles/searchOverlay.css";
 import { products } from "./ProductData"; // Importing products array
 import Brand from './Brand';
+import { useTheme } from "./Theme";
 
 const Navbar = ({ onSearch }) => {
   const location = useLocation();
+  const { theme } = useTheme();  // Destructure theme object from ThemeContext
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); // Track the search term
@@ -43,7 +45,7 @@ const Navbar = ({ onSearch }) => {
         <div className={styles.line}></div>
       </button>
 
-      <nav className={`${styles.navbarNav} ${isNavOpen ? styles.open : ""}`}>
+      <nav className={`${styles.navbarNav} ${isNavOpen ? styles.open : ""}`} style={{ color: theme.primaryColor }}>
         <ul className={styles.navList}>
           {["Home", "About", "Product", "Services", "Contact", "FAQ"].map(
             (item) => {
@@ -55,6 +57,7 @@ const Navbar = ({ onSearch }) => {
                     className={`${styles.navLink} ${
                       location.pathname === path ? styles.active : ""
                     }`}
+                    style={{ color: theme.primaryColor }}
                   >
                     {item}
                   </Link>

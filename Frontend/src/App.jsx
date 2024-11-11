@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
 import { products } from './components/ProductData'; // Import the product data
 import WhatsappButton from './components/WhatsappButton';
-
+import ThemeProvider  from './components/Theme'; 
 
 function App() {
   const [filteredProducts, setFilteredProducts] = useState(products); // Initially, all products
@@ -15,12 +15,14 @@ function App() {
   };
 
   return (
+    <ThemeProvider> 
     <div className="App">
       <Navbar onSearch={handleSearch} /> {/* Pass the search handler to Navbar */}
       <Outlet context={{ filteredProducts, handleSearch }} /> {/* Provide context to child routes */}
       <WhatsappButton />
       <Footer />
     </div>
+    </ThemeProvider>
   );
 }
 

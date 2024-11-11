@@ -33,7 +33,7 @@
   font-size: 16px;
   background-color: #66b9da; /* Light blue input background */
   color: white; /* Text color in inputs */
-}
+  border-bottom: 1px solid #cfcfcfc2;}
 
 .inquiry input::placeholder, .inquiry textarea::placeholder {
   color: #d9e3ef; /* Placeholder text color */
