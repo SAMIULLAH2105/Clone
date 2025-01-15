@@ -1,8 +1,8 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "../styles/Slider.module.css";
+import Image from "./Image";
 
 // Custom Next Arrow Component
 const NextArrow = (props) => {
@@ -31,13 +31,13 @@ const PrevArrow = (props) => {
 };
 
 const brands = [
-  { id: 1, logo: "src/assets/brandLogos/dfm.jpeg", alt: "Brand 1" },
-  { id: 2, logo: "src/assets/brandLogos/hongyan.jpeg", alt: "Brand 2" },
-  { id: 3, logo: "src/assets/brandLogos/volvo.png", alt: "Brand 3" },
-  { id: 4, logo: "src/assets/brandLogos/shacman.png", alt: "Brand 4" },
-  { id: 5, logo: "src/assets/brandLogos/sinotruck.jpeg", alt: "Brand 5" },
-  { id: 6, logo: "src/assets/brandLogos/one.jpeg", alt: "Brand 6" },
-  { id: 7, logo: "src/assets/brandLogos/mercedes.jpeg", alt: "Brand 7" },
+  { id: 1, logo: "brandLogos/dfm.jpeg", alt: "Brand 1" },
+  { id: 2, logo: "brandLogos/hongyan.jpeg", alt: "Brand 2" },
+  { id: 3, logo: "brandLogos/volvo.png", alt: "Brand 3" },
+  { id: 4, logo: "brandLogos/shacman.png", alt: "Brand 4" },
+  { id: 5, logo: "brandLogos/sinotruck.jpeg", alt: "Brand 5" },
+  { id: 6, logo: "brandLogos/one.jpeg", alt: "Brand 6" },
+  { id: 7, logo: "brandLogos/mercedes.jpeg", alt: "Brand 7" },
 ];
 
 const BrandSlider = () => {
@@ -78,7 +78,7 @@ const BrandSlider = () => {
       <Slider {...settings}>
         {brands.map((brand) => (
           <div key={brand.id} className={styles.slide}>
-            <img
+            <Image
               src={brand.logo}
               alt={brand.alt}
               className={styles.sliderImage}

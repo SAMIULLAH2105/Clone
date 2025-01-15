@@ -24,7 +24,7 @@
 @media (max-width: 768px) {
     .navbarLogo {
         padding-left: 1rem;
-        width: 100%;
+
         justify-content: center;
         gap: 50%;
     }

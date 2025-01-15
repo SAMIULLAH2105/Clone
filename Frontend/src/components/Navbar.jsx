@@ -3,12 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
 import "../styles/searchOverlay.css";
 import { products } from "./ProductData"; // Importing products array
-import Brand from './Brand';
+import Brand from "./Brand";
 import { useTheme } from "./Theme";
 
 const Navbar = ({ onSearch }) => {
   const location = useLocation();
-  const { theme } = useTheme();  // Destructure theme object from ThemeContext
+  const { theme } = useTheme(); // Destructure theme object from ThemeContext
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); // Track the search term
@@ -28,24 +28,28 @@ const Navbar = ({ onSearch }) => {
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
     onSearch(filteredProducts); // Send the filtered products to the parent component
-    setIsSearchOpen(false); // Close the search overlay after searching 
+    setIsSearchOpen(false); // Close the search overlay after searching
   };
 
   return (
     <header className={styles.navbar}>
-      <Brand />       {/* Brand component */}
-
+      <div className={styles.logoHamburgerContainer}>
+        <Brand /> {/* Brand component */}
         <button
-        className={styles.hamburger}
-        aria-label="Toggle navigation"
-        onClick={handleNavToggle}
-      >
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
-      </button>
+          className={styles.hamburger}
+          aria-label="Toggle navigation"
+          onClick={handleNavToggle}
+        >
+          <div className={styles.line}></div>
+          <div className={styles.line}></div>
+          <div className={styles.line}></div>
+        </button>
+      </div>
 
-      <nav className={`${styles.navbarNav} ${isNavOpen ? styles.open : ""}`} style={{ color: theme.primaryColor }}>
+      <nav
+        className={`${styles.navbarNav} ${isNavOpen ? styles.open : ""}`}
+        style={{ color: theme.primaryColor }}
+      >
         <ul className={styles.navList}>
           {["Home", "About", "Product", "Services", "Contact", "FAQ"].map(
             (item) => {
@@ -87,7 +91,6 @@ const Navbar = ({ onSearch }) => {
           </svg>
         </button>
       </nav>
-
       {isSearchOpen && (
         <div className="searchOverlay">
           <button className="closeButton" onClick={handleSearchToggle}>
