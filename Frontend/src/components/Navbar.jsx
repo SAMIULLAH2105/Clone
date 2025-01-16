@@ -4,7 +4,7 @@ import styles from "../styles/Navbar.module.css";
 import "../styles/searchOverlay.css";
 import { products } from "./ProductData"; // Importing products array
 import Brand from "./Brand";
-import { useTheme } from "./Theme";
+import { useTheme } from "../themes/Theme";
 
 const Navbar = ({ onSearch }) => {
   const location = useLocation();

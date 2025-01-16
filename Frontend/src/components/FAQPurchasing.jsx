@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/FAQPurchasing.module.css";
 import WhatsAppIcon from "../assets/whatsapp.svg";
-import { useTheme } from "./Theme"; 
+import { useTheme } from "../themes/Theme";
 
 function FAQItem({ title, content, isOpen, onToggle }) {
   return (

@@ -2,8 +2,7 @@ import React from 'react';
 import styles from '../styles/Description.module.css';
 import { FaArrowDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; 
-import { useTheme } from "../components/Theme";
-
+import { useTheme } from "../themes/Theme";
 const Description = ({ heading, subheading, description, buttonText }) => {
   const { theme } = useTheme();  // Destructure theme from the useTheme hook
   const navigate = useNavigate(); 

@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 import WhatsappButton from "./components/WhatsappButton";
-import ThemeProvider from "./components/Theme";
+import ThemeProvider from "./themes/Theme";
 
 function App() {
   const [filteredProducts, setFilteredProducts] = useState([]); // Initially empty

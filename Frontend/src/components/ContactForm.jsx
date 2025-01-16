@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/ContactForm.module.css";
-import { useTheme } from "../components/Theme";
+import { useTheme } from "../themes/Theme";
 
 function ContactForm({ heading }) {
   const { theme } = useTheme(); // Destructure theme from the useTheme hook
