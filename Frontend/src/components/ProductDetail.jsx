@@ -3,11 +3,19 @@ import { useParams } from "react-router-dom";
 import styles from "../styles/ProductDetail.module.css";
 import FooterTop from "./FooterTop";
 import paymentImage from "../assets/products/payment.png";
+
 const ProductDetail = () => {
   const { slug } = useParams(); // Get slug from URL
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false); // State to track if it's an admin page
+
   useEffect(() => {
+    // Check if the URL contains '/admin'
+    if (window.location.pathname.includes("/admin")) {
+      setIsAdmin(true); // Set isAdmin to true if it's an admin URL
+    }
+
     const fetchProduct = async () => {
       try {
         const response = await fetch(`http://localhost:3000/products/${slug}`);
@@ -24,6 +32,28 @@ const ProductDetail = () => {
 
     fetchProduct();
   }, [slug]);
+
+  const deleteProduct = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/products/${product.id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        alert("Product deleted successfully");
+        // Optionally, redirect or update the UI after deletion
+      } else {
+        alert("Failed to delete product");
+      }
+    } catch (err) {
+      alert("Error deleting product");
+    }
+  };
 
   if (error) {
     return <div className={styles.notFound}>{error}</div>;
@@ -54,7 +84,14 @@ const ProductDetail = () => {
             <li>No Hassle Refunds</li>
             <li>Secure Payments</li>
           </ul>
-          <img src={paymentImage} alt="Payment" />;
+          <img src={paymentImage} alt="Payment" />
+          <div>
+            {isAdmin && (
+              <button className={styles.deleteButton} onClick={deleteProduct}>
+                Delete Product
+              </button>
+            )}
+          </div>
         </div>
       </div>
       <FooterTop />

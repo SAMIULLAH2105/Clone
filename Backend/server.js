@@ -16,12 +16,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-
 app.use("/email", emailRouter);
 app.use("/products", productRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  connectDB(); 
-  syncModels(); // Sync all models 
+  connectDB();
+  syncModels();
 });
