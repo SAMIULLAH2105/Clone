@@ -7,7 +7,7 @@ const Brand = () => {
   return (
     <div className={styles.navbarLogo}>
       <Link className={styles.logoPlaceholder} to="/">
-        <Image src="stormMachine/smLogo.png" alt="Logo" />
+        <img src="\src\assets\logos\smLogo.png" alt="" />
       </Link>
     </div>
   );
