@@ -24,6 +24,8 @@ export const getProducts = async (req, res) => {
     console.error("Error fetching products:", error);
     res.status(500).json({ message: "Server error. Please try again later." });
   }
+
+  console.log("hit");
 };
 
 // Get a single product by slug
