@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
 import "../styles/searchOverlay.css";
@@ -7,12 +7,14 @@ import { useTheme } from "../themes/Theme";
 
 const Navbar = ({ onSearch }) => {
   const location = useLocation();
-  const navigate = useNavigate(); // React Router's navigate hook
-  const { theme } = useTheme(); // Destructure theme object from ThemeContext
+  const navigate = useNavigate();
+  const { theme } = useTheme();
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(""); // Track the search term
-  const [loading, setLoading] = useState(false); // Track API call state
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const isAuthenticated = true;
 
   const handleNavToggle = () => {
     setIsNavOpen((prevState) => !prevState);
@@ -25,12 +27,11 @@ const Navbar = ({ onSearch }) => {
   const handleSearchSubmit = async () => {
     setLoading(true);
     try {
-      // Update the URL with the search query
-      navigate(`/products?search=${encodeURIComponent(searchTerm)}`);
+      const basePath = isAuthenticated ? "/admin" : "";
+      navigate(`${basePath}/products?search=${encodeURIComponent(searchTerm)}`);
 
-      // Fetch the products
       const response = await fetch(
-        `/products?search=${encodeURIComponent(searchTerm)}`
+        `${basePath}/products?search=${encodeURIComponent(searchTerm)}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch products");
@@ -38,19 +39,21 @@ const Navbar = ({ onSearch }) => {
       const data = await response.json();
       console.log(data);
 
-      onSearch(data); // Pass the fetched products to the parent component
+      onSearch(data);
     } catch (error) {
       console.error("Error fetching products:", error);
     } finally {
       setLoading(false);
-      setIsSearchOpen(false); // Close the search overlay after searching
+      setIsSearchOpen(false);
     }
   };
+
+  const navItems = ["Home", "About", "Products", "Services", "Contact", "FAQ"];
 
   return (
     <header className={styles.navbar}>
       <div className={styles.logoHamburgerContainer}>
-        <Brand /> {/* Brand component */}
+        <Brand />
         <button
           className={styles.hamburger}
           aria-label="Toggle navigation"
@@ -67,24 +70,36 @@ const Navbar = ({ onSearch }) => {
         style={{ color: theme.primaryColor }}
       >
         <ul className={styles.navList}>
-          {["Home", "About", "Products", "Services", "Contact", "FAQ"].map(
-            (item) => {
-              const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
-              return (
-                <li key={item} className={styles.navItem}>
-                  <Link
-                    to={path}
-                    className={`${styles.navLink} ${
-                      location.pathname === path ? styles.active : ""
-                    }`}
-                    style={{ color: theme.primaryColor }}
-                  >
-                    {item}
-                  </Link>
-                </li>
-              );
-            }
-          )}
+          {navItems.map((item) => {
+            // Determine the path based on authentication status
+            const basePath = isAuthenticated ? "/admin" : "";
+            const path =
+              item === "Home"
+                ? isAuthenticated
+                  ? "/admin"
+                  : "/"
+                : `${basePath}/${item.toLowerCase()}`;
+
+            // Check if the current path matches, accounting for both admin and non-admin routes
+            const isActive =
+              location.pathname === path ||
+              (isAuthenticated &&
+                location.pathname === `/admin/${item.toLowerCase()}`);
+
+            return (
+              <li key={item} className={styles.navItem}>
+                <Link
+                  to={path}
+                  className={`${styles.navLink} ${
+                    isActive ? styles.active : ""
+                  }`}
+                  style={{ color: theme.primaryColor }}
+                >
+                  {item}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <button
           className={styles.searchButton}
@@ -119,7 +134,7 @@ const Navbar = ({ onSearch }) => {
                 className="searchInput"
                 placeholder="Search..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)} // Update the search term
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
               <button
                 className="searchIcon"

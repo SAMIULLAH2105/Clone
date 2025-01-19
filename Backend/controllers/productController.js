@@ -18,14 +18,14 @@ export const getProducts = async (req, res) => {
 
     const products = await Product.findAll({
       where: whereClause,
-    }); // Fetch products based on the query
+    }); // Fetch products based on the queryF
     res.status(200).json(products);
   } catch (error) {
     console.error("Error fetching products:", error);
     res.status(500).json({ message: "Server error. Please try again later." });
   }
 
-  console.log("hit");
+
 };
 
 // Get a single product by slug

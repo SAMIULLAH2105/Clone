@@ -10,7 +10,7 @@ const AdminPanel = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/products");
+        const response = await fetch("http://localhost:3000/admin/products");
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -22,18 +22,9 @@ const AdminPanel = () => {
     fetchProducts();
   }, []);
 
-  const handleDelete = async (id) => {
-    try {
-      await fetch(`http://localhost:3000/products/${id}`, { method: "DELETE" });
-      setProducts(products.filter((product) => product.id !== id));
-    } catch (error) {
-      console.error("Error deleting product:", error);
-    }
-  };
-
   const handleAddProduct = async (newProduct) => {
     try {
-      const response = await fetch("http://localhost:3000/products", {
+      const response = await fetch("http://localhost:3000/admin/products", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newProduct),
@@ -73,7 +64,7 @@ const AdminPanel = () => {
           height: "100vh",
         }}
       >
-        <CardComponent products={products} onDelete={handleDelete} />
+        <CardComponent products={products} />
       </div>
       <div
         style={{

@@ -6,7 +6,7 @@ import FooterTop from "../components/FooterTop";
 function ProductPage() {
   const location = useLocation(); // Access the current URL
   const [products, setProducts] = useState([]); // State to store products
-  const [loading, setLoading] = useState(false); // State for loading indicator
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {

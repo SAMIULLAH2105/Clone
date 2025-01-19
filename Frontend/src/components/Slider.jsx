@@ -2,7 +2,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "../styles/Slider.module.css";
-import Image from "./Image";
+
+import dfmLogo from "../assets/brandLogos/dfm.jpeg";
+import hongyanLogo from "../assets/brandLogos/hongyan.jpeg";
+import volvoLogo from "../assets/brandLogos/volvo.png";
+import shacmanLogo from "../assets/brandLogos/shacman.png";
+import sinotruckLogo from "../assets/brandLogos/sinotruck.jpeg";
+import oneLogo from "../assets/brandLogos/one.jpeg";
+import mercedesLogo from "../assets/brandLogos/mercedes.jpeg";
 
 // Custom Next Arrow Component
 const NextArrow = (props) => {
@@ -30,14 +37,14 @@ const PrevArrow = (props) => {
   );
 };
 
-const brands = [
-  { id: 1, logo: "src/assets/brandLogos/dfm.jpeg", alt: "Brand 1" },
-  { id: 2, logo: "src/assets/brandLogos/hongyan.jpeg", alt: "Brand 2" },
-  { id: 3, logo: "src/assets/brandLogos/volvo.png", alt: "Brand 3" },
-  { id: 4, logo: "src/assets/brandLogos/shacman.png", alt: "Brand 4" },
-  { id: 5, logo: "src/assets/brandLogos/sinotruck.jpeg", alt: "Brand 5" },
-  { id: 6, logo: "src/assets/brandLogos/one.jpeg", alt: "Brand 6" },
-  { id: 7, logo: "src/assets/brandLogos/mercedes.jpeg", alt: "Brand 7" },
+export const brands = [
+  { id: 1, logo: dfmLogo, alt: "Brand 1", name: "DFM" },
+  { id: 2, logo: hongyanLogo, alt: "Brand 2", name: "Hongyan" },
+  { id: 3, logo: volvoLogo, alt: "Brand 3", name: "Volvo" },
+  { id: 4, logo: shacmanLogo, alt: "Brand 4", name: "Shacman" },
+  { id: 5, logo: sinotruckLogo, alt: "Brand 5", name: "Sinotruck" },
+  { id: 6, logo: oneLogo, alt: "Brand 6", name: "One" },
+  { id: 7, logo: mercedesLogo, alt: "Brand 7", name: "Mercedes" },
 ];
 
 const BrandSlider = () => {

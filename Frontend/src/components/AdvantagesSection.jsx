@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/AdvantagesSection.module.css";
+import yellowtruckPic from "../assets/yellowtruck.jpg"
 import { useTheme } from "../themes/Theme";
 const AdvantagesSection = () => {
   const { theme } = useTheme();
@@ -25,7 +26,7 @@ const AdvantagesSection = () => {
       </div>
       <div className={styles.imageContainer}>
         <img
-          src="src\assets\yellowtruck.jpg"
+          src={yellowtruckPic}
           alt="Advantages"
           className={styles.image}
         />

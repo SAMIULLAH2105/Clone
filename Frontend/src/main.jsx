@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, Navigate } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
@@ -9,50 +9,112 @@ import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 import Product from "./pages/Product";
 import ProductDetail from "./components/ProductDetail";
-import AdminPanel from "./pages/AdminPanel";
+import AdminPanel from "./pages/AdminPanel"
 
-// Create the router with defined routes
+// Protected Route component to handle auth
+const ProtectedRoute = ({ children }) => {
+  // Replace this with your actual auth check
+  // const isAuthenticated = localStorage.getItem('isAdmin') === 'true';
+  const isAuthenticated = true;
+  
+  if (!isAuthenticated) {
+    return <Navigate to="/" replace />;
+  }
+
+  return children;
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      // Regular user routes
       {
-        path: "/", // Home route
+        path: "/",
         element: <Home />,
       },
       {
-        path: "products", // Product route
-        element: <Product />,
-      },
-      {
-        path: "product/:slug", // Dynamic product detail route for regular users
-        element: <ProductDetail isAdmin={false} />, // Pass isAdmin as false
-      },
-
-      {
-        path: "contact", // Contact route
-        element: <Contact />,
-      },
-      {
-        path: "about", // About route
+        path: "about",
         element: <About />,
       },
       {
-        path: "services", // Services route
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "services",
         element: <Services />,
       },
       {
-        path: "faq", // FAQ route
+        path: "faq",
         element: <FAQ />,
       },
       {
-        path: "admin", // Admin panel route
-        element: <AdminPanel />,
+        path: "products",
+        element: <Product />,
       },
       {
-        path: "admin/:slug", // Admin panel route
-        element: <ProductDetail />,
+        path: "products/:slug",
+        element: <ProductDetail isAdmin={false} />,
+      },
+
+      // Admin routes
+      {
+        path: "admin",
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/about",
+        element: (
+          <ProtectedRoute>
+            <About />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/contact",
+        element: (
+          <ProtectedRoute>
+            <Contact />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/services",
+        element: (
+          <ProtectedRoute>
+            <Services />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/faq",
+        element: (
+          <ProtectedRoute>
+            <FAQ />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/products",
+        element: (
+          <ProtectedRoute>
+            <AdminPanel/>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "admin/products/:slug",
+        element: (
+          <ProtectedRoute>
+            <ProductDetail isAdmin={true} />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

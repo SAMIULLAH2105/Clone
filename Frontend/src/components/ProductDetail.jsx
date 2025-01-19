@@ -5,15 +5,25 @@ import FooterTop from "./FooterTop";
 import paymentImage from "../assets/products/payment.png";
 
 const ProductDetail = () => {
-  const { slug } = useParams(); // Get slug from URL
+  const { slug } = useParams();
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
-  const [isAdmin, setIsAdmin] = useState(false); // State to track if it's an admin page
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  // Function to fix image path with hardcoded base URL
+  const getCorrectImagePath = (relativePath) => {
+    if (!relativePath) return "";
+
+    // Remove '../src' from the path
+    let path = relativePath.replace("../src/", "");
+
+    // Hardcode the base path to assets
+    return `/src/assets/${path.replace("assets/", "")}`;
+  };
 
   useEffect(() => {
-    // Check if the URL contains '/admin'
     if (window.location.pathname.includes("/admin")) {
-      setIsAdmin(true); // Set isAdmin to true if it's an admin URL
+      setIsAdmin(true);
     }
 
     const fetchProduct = async () => {
@@ -23,8 +33,16 @@ const ProductDetail = () => {
           throw new Error("Product not found");
         }
         const data = await response.json();
-        console.log(data); // Log the fetched data
-        setProduct(data); // Set the product state
+
+        // Create a new product object with fixed image paths
+        const productWithFixedImages = {
+          ...data,
+          image1: getCorrectImagePath(data.image1),
+          image2: data.image2 ? getCorrectImagePath(data.image2) : null,
+          image3: data.image3 ? getCorrectImagePath(data.image3) : null,
+        };
+
+        setProduct(productWithFixedImages);
       } catch (err) {
         setError(err.message);
       }
@@ -36,7 +54,7 @@ const ProductDetail = () => {
   const deleteProduct = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3000/products/${product.id}`,
+        `http://localhost:3000/admin/products/${product.id}`,
         {
           method: "DELETE",
           headers: {
@@ -46,12 +64,13 @@ const ProductDetail = () => {
       );
       if (response.ok) {
         alert("Product deleted successfully");
-        // Optionally, redirect or update the UI after deletion
+        window.location.href = "/admin/products";
       } else {
         alert("Failed to delete product");
       }
     } catch (err) {
       alert("Error deleting product");
+      console.error("Delete error:", err);
     }
   };
 
@@ -67,11 +86,17 @@ const ProductDetail = () => {
     <div className={styles.container}>
       <div className={styles.productDetails}>
         <div className={styles.images}>
-          <img
-            src={product.image1}
-            alt={product.name}
-            className={styles.mainImage}
-          />
+          {product.image1 && (
+            <img
+              src={product.image1}
+              alt={product.name}
+              className={styles.mainImage}
+              onError={(e) => {
+                console.error("Image failed to load:", e.target.src);
+                e.target.src = "/placeholder.png";
+              }}
+            />
+          )}
         </div>
         <div className={styles.info}>
           <h1>{product.name}</h1>
@@ -85,13 +110,13 @@ const ProductDetail = () => {
             <li>Secure Payments</li>
           </ul>
           <img src={paymentImage} alt="Payment" />
-          <div>
-            {isAdmin && (
+          {isAdmin && (
+            <div className={styles.adminControls}>
               <button className={styles.deleteButton} onClick={deleteProduct}>
                 Delete Product
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
       <FooterTop />

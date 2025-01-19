@@ -10,6 +10,8 @@ import {
 const router = express.Router();
 
 // Routes
+console.log("going through products");
+
 router.get("/", getProducts); // Get all products
 router.get("/:slug", getProduct); // Get a single product by slug
 router.post("/", generateSlug, createProduct); // Create a product with slug generation
