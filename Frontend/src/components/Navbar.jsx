@@ -14,8 +14,6 @@ const Navbar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const isAuthenticated = false;
-
   const handleNavToggle = () => {
     setIsNavOpen((prevState) => !prevState);
   };
@@ -27,7 +25,9 @@ const Navbar = ({ onSearch }) => {
   const handleSearchSubmit = async () => {
     setLoading(true);
     try {
-      const basePath = isAuthenticated ? "/admin" : "";
+      const basePath = window.location.pathname.includes("/admin")
+        ? "/admin"
+        : "";
       navigate(`${basePath}/products?search=${encodeURIComponent(searchTerm)}`);
 
       const response = await fetch(
@@ -72,10 +72,13 @@ const Navbar = ({ onSearch }) => {
         <ul className={styles.navList}>
           {navItems.map((item) => {
             // Determine the path based on authentication status
-            const basePath = isAuthenticated ? "/admin" : "";
+            const basePath = window.location.pathname.includes("/admin")
+              ? "/admin"
+              : "";
+
             const path =
               item === "Home"
-                ? isAuthenticated
+                ? window.location.pathname.includes("/admin")
                   ? "/admin"
                   : "/"
                 : `${basePath}/${item.toLowerCase()}`;
@@ -83,7 +86,7 @@ const Navbar = ({ onSearch }) => {
             // Check if the current path matches, accounting for both admin and non-admin routes
             const isActive =
               location.pathname === path ||
-              (isAuthenticated &&
+              (window.location.pathname.includes("/admin") &&
                 location.pathname === `/admin/${item.toLowerCase()}`);
 
             return (
