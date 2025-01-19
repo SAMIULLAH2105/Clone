@@ -12,7 +12,7 @@ Ensure you have the following installed on your system:
 
 ### Clone the Repository
 ```bash
-git clone <url-of-the-project>
+git clone "https://github.com/SAMIULLAH2105/Clone.git"
 ```
 ### Open the Project in an IDE and Install Dependencies
 In the root folder, run:
