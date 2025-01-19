@@ -34,7 +34,7 @@ Create a .env file in the backend folder and add the following:
 ```bash
 PORT=
 MYSQL_HOST=
-MYSQL_USER=root
+MYSQL_USER=
 MYSQL_PASSWORD=
 MYSQL_DATABASE=
 ```
