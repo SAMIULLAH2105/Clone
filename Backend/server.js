@@ -5,9 +5,9 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import { connectDB } from "./lib/connectDB.js";
 import { syncModels } from "./models/index.js";
-import emailRouter from "./routes/emailRoutes.js";
 import productRouter from "./routes/productRoutes.js";
 import adminRouter from "./routes/adminRoutes.js";
+import userRouter from "./routes/userRoutes.js";
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -17,8 +17,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/email", emailRouter);
 app.use("/products", productRouter);
+app.use("/users", userRouter);
 app.use("/admin", adminRouter);
 
 app.listen(PORT, () => {

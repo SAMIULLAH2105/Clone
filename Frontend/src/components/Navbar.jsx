@@ -14,7 +14,7 @@ const Navbar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   const handleNavToggle = () => {
     setIsNavOpen((prevState) => !prevState);

@@ -8,6 +8,7 @@ function ContactForm({ heading }) {
     name: "",
     email: "",
     message: "",
+    whatsappNumber: "",
   });
 
   const handleChange = (e) => {
@@ -22,7 +23,7 @@ function ContactForm({ heading }) {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/email", {
+      const response = await fetch("http://localhost:3000/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

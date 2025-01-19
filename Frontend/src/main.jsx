@@ -15,7 +15,7 @@ import AdminPanel from "./pages/AdminPanel"
 const ProtectedRoute = ({ children }) => {
   // Replace this with your actual auth check
   // const isAuthenticated = localStorage.getItem('isAdmin') === 'true';
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
