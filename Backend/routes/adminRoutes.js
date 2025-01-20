@@ -6,9 +6,12 @@ import {
   deleteProduct,
   createProduct,
 } from "../controllers/productController.js";
+
+import { loginAdmin } from "../controllers/adminController.js";
 const router = express.Router();
-console.log("you are in admin route");
+
 // Routes
+router.post("/login", loginAdmin);
 router.get("/products", getProducts); // Get all products
 router.get("/products/:slug", getProduct); // Get a single product by slug
 router.post("/products", generateSlug, createProduct); // Create a product with slug generation
