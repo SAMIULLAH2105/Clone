@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import CardComponent from "../components/CardComponent";
 import ProductForm from "../components/ProductForm";
 
@@ -6,11 +7,18 @@ const AdminPanel = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/admin/products");
+        const searchParams = new URLSearchParams(location.search);
+        const searchQuery = searchParams.get("search") || "";
+        const response = await fetch(
+          `http://localhost:3000/admin/products?search=${encodeURIComponent(
+            searchQuery
+          )}`
+        );
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -20,7 +28,7 @@ const AdminPanel = () => {
       }
     };
     fetchProducts();
-  }, []);
+  }, [location.search]);
 
   const handleAddProduct = async (newProduct) => {
     try {

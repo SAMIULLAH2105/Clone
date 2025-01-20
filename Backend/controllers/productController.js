@@ -68,7 +68,7 @@ export const createProduct = async (req, res) => {
 };
 
 // Delete a product by ID
-export const deleteProduct = async (req, res) => {
+export const deleteProduct = async (req, res) => {     
   try {
     const { id } = req.params;
     const deletedProduct = await Product.destroy({

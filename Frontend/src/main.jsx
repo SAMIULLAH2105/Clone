@@ -15,6 +15,7 @@ import Product from "./pages/Product";
 import ProductDetail from "./components/ProductDetail";
 import AdminPanel from "./pages/AdminPanel";
 import LoginForm from "./components/LoginForm";
+import RegistrationForm from "./components/RegistrationForm";
 
 const Main = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -37,6 +38,10 @@ const Main = () => {
         {
           path: "admin/login",
           element: <LoginForm setIsAuthenticated={setIsAuthenticated} />,
+        },
+        {
+          path: "admin/register",
+          element: <RegistrationForm />,
         },
 
         // Admin routes with authentication check

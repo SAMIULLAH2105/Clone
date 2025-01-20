@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
 import styles from "../styles/ProductDetail.module.css";
 import FooterTop from "./FooterTop";
 import paymentImage from "../assets/products/payment.png";
 
 const ProductDetail = () => {
   const { slug } = useParams();
+  const navigate = useNavigate(); // Initialize navigate hook
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  // Function to fix image path with hardcoded base URL
   const getCorrectImagePath = (relativePath) => {
     if (!relativePath) return "";
-
-    // Remove '../src' from the path
     let path = relativePath.replace("../src/", "");
-
-    // Hardcode the base path to assets
     return `/src/assets/${path.replace("assets/", "")}`;
   };
 
@@ -33,15 +29,12 @@ const ProductDetail = () => {
           throw new Error("Product not found");
         }
         const data = await response.json();
-
-        // Create a new product object with fixed image paths
         const productWithFixedImages = {
           ...data,
           image1: getCorrectImagePath(data.image1),
           image2: data.image2 ? getCorrectImagePath(data.image2) : null,
           image3: data.image3 ? getCorrectImagePath(data.image3) : null,
         };
-
         setProduct(productWithFixedImages);
       } catch (err) {
         setError(err.message);
@@ -64,7 +57,7 @@ const ProductDetail = () => {
       );
       if (response.ok) {
         alert("Product deleted successfully");
-        window.location.href = "/admin/products";
+        navigate(-1); // Go back to the previous page
       } else {
         alert("Failed to delete product");
       }

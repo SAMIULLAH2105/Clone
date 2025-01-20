@@ -82,8 +82,7 @@
 }
 
 .searchButton:hover {
-  background-color: var(--hover-color);
-  border-radius: 50%;
+  cursor: pointer;
 }
 
 .hamburger {
