@@ -1,10 +1,23 @@
 import React from 'react';
 import styles from '../styles/ContactUs.module.css';
-// import contactus from '../assets/contactus.jpeg'; 
+import contactusImage from '../assets/contactus.jpeg';
+import { useTheme } from "../themes/Theme";
 
 function ContactUs() {
+    const { theme } = useTheme();
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            style={{
+                backgroundImage: `linear-gradient(rgba(${parseInt(theme.primaryColor.slice(1, 3), 16)}, 
+                ${parseInt(theme.primaryColor.slice(3, 5), 16)}, 
+                ${parseInt(theme.primaryColor.slice(5, 7), 16)}, 0.7), 
+                rgba(${parseInt(theme.primaryColor.slice(1, 3), 16)}, 
+                ${parseInt(theme.primaryColor.slice(3, 5), 16)}, 
+                ${parseInt(theme.primaryColor.slice(5, 7), 16)}, 0.7)), 
+                url(${contactusImage})`
+            }}>
+
             <div className={styles.header}>
                 <h1>Contact Us</h1>
                 <div className={styles.stars}>
