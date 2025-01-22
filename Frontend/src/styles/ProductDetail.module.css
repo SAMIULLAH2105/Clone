@@ -121,3 +121,22 @@ body {
   background-color: rgb(159, 159, 213);
   padding: 20px;
 }
+
+.addToWishlistButton {
+  background-color: #ff8c00;
+  color: white; 
+  font-weight: bolder;
+  border: none; 
+  padding: 10px 10px; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  transform: translateY(-10px);
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.addToWishlistButton:hover {
+  background-color: #e07b00; 
+  transition: background-color 0.3s;
+
+}

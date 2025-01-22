@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import FAQ from "./pages/FAQ";
 import About from "./pages/About";
+import Wishlist from "./components/Wishlist";
 import Product from "./pages/Product";
 import ProductDetail from "./components/ProductDetail";
 import AdminPanel from "./pages/AdminPanel";
@@ -33,6 +34,7 @@ const Main = () => {
         { path: "faq", element: <FAQ /> },
         { path: "products", element: <Product /> },
         { path: "products/:slug", element: <ProductDetail isAdmin={false} /> },
+        { path: "wishlist", element: <Wishlist /> },
 
         // Admin login route
         {

@@ -18,6 +18,20 @@ const ProductDetail = () => {
     return `/src/assets/${path.replace("assets/", "")}`;
   };
 
+  // Add product to wishlist
+  const addToWishlist = (product) => {
+    const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    // Prevent adding the same product again
+    if (!savedWishlist.some(item => item.id === product.id)) {
+      savedWishlist.push(product);
+      localStorage.setItem("wishlist", JSON.stringify(savedWishlist));
+      alert("Product added to wishlist!");
+    } else {
+      alert("Product is already in your wishlist.");
+    }
+  };
+
   useEffect(() => {
     if (window.location.pathname.includes("/admin")) {
       setIsAdmin(true);
@@ -100,6 +114,13 @@ const ProductDetail = () => {
             <li>Secure Payments</li>
           </ul>
           <img src={paymentImage} alt="Payment" />
+
+          <button
+            className={styles.addToWishlistButton}
+            onClick={() => addToWishlist(product)}>
+            Add to Wishlist
+          </button>
+
           {isAdmin && (
             <div className={styles.adminControls}>
               <button className={styles.deleteButton} onClick={deleteProduct}>
