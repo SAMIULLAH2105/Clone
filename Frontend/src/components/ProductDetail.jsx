@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
 import styles from "../styles/ProductDetail.module.css";
 import FooterTop from "./FooterTop";
 import paymentImage from "../assets/products/payment.png";
+import ProductImage from "./ProductImages";
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -29,11 +30,18 @@ const ProductDetail = () => {
           throw new Error("Product not found");
         }
         const data = await response.json();
+
+        // Prepare product with images
         const productWithFixedImages = {
           ...data,
-          image1: getCorrectImagePath(data.image1),
-          image2: data.image2 ? getCorrectImagePath(data.image2) : null,
-          image3: data.image3 ? getCorrectImagePath(data.image3) : null,
+          images: [
+            getCorrectImagePath(data.image1),
+            getCorrectImagePath(data.image2),
+            // getCorrectImagePath(data.image1), // Duplicate for testing
+            // getCorrectImagePath(data.image2), // Duplicate for testing
+            // getCorrectImagePath(data.image1), // Duplicate for testing
+            // getCorrectImagePath(data.image2), // Duplicate for testing
+          ].filter(Boolean), // Filter out null/undefined
         };
         setProduct(productWithFixedImages);
       } catch (err) {
@@ -78,19 +86,8 @@ const ProductDetail = () => {
   return (
     <div className={styles.container}>
       <div className={styles.productDetails}>
-        <div className={styles.images}>
-          {product.image1 && (
-            <img
-              src={product.image1}
-              alt={product.name}
-              className={styles.mainImage}
-              onError={(e) => {
-                console.error("Image failed to load:", e.target.src);
-                e.target.src = "/placeholder.png";
-              }}
-            />
-          )}
-        </div>
+        <ProductImage images={product.images} />
+
         <div className={styles.info}>
           <h1>{product.name}</h1>
           <p>{product.description}</p>

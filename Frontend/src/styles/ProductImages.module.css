@@ -1,0 +1,59 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+
+.mainImage {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.mainImage:hover {
+    transform: scale(1.05);
+}
+
+.thumbnails {
+    display: flex;
+    gap: 5px;
+    animation: fadeIn 1s forwards;
+    overflow-x: auto;
+    padding: 8px;
+    bottom: -2%;
+    transform: translateY(-45px);
+    z-index: 10;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 65px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.inactiveThumbnail {
+    filter: blur(2px);
+    opacity: 0.7;
+}
+
+.activeThumbnail {
+    filter: none;
+    opacity: 1;
+}
+
+.thumbnail:hover {
+    filter: brightness(1.2);
+}
