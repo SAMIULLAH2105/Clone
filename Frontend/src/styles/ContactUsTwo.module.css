@@ -8,7 +8,7 @@
   text-align: center;
   padding: 20px;
   height: 500px;
-  background-color: #f2f2f262; /* Optional background color */
+  background-color: #f2f2f262;
 }
 
 .container::before {
@@ -21,88 +21,81 @@
   background-image: url("../assets/Refurbishment-second-pic.jpg");
   background-size: cover;
   background-position: center center;
-  filter: blur(1px); /* Adjust the blur value as needed */
-  opacity: 0.6; /* You can tweak the opacity as well */
+  filter: blur(1px);
+  opacity: 0.6;
   z-index: -1;
 }
 
 .container * {
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
-.container p{
+.container p {
   z-index: 1;
   width: 80%;
   font-size: 20px;
   padding-bottom: 50px;
+  text-align: center;
 }
-.container h2{
+
+.container h2 {
   color: black;
   font-size: 40px;
-  
   padding-top: 10%;
+  text-align: center;
 }
 
 .contactInfo {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
+  width: 100%;
 }
 
 .contactItem {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-left: 130px;
+  text-align: center;
+  padding: 0 20px;
+  cursor: pointer;
 }
 
 .contactItem span {
   margin: 5px 0;
+  text-align: center;
 }
 
-
-@media (max-width: 680px){
-  .container{
+@media (max-width: 680px) {
+  .container {
     margin-top: 80px;
   }
-  .contactInfo{
+
+  .contactInfo {
     flex-direction: column;
-    margin-right: 25%;
-    font-size: 15px;
+    align-items: center;
   }
-  .container p{
+
+  .container p {
     font-size: 15px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     width: 90%;
     padding-bottom: 0;
   }
-  
-  
-
-}
-@media (max-width: 780px){
-  .container{
-    margin-top: 70px;
-  }
-  
-  
-  
-
 }
 
-@media (max-width: 480px){
-  .container p{
+@media (max-width: 480px) {
+  .container p {
     font-size: 14px;
     width: 95%;
     padding-bottom: 1px;
     font-weight: bolder;
   }
 
-  .contactInfo{
-    font-size: 14px;
-    margin-right: 28%;
+  .container h2 {
+    font-size: 30px;
   }
-
-  
 }

@@ -18,17 +18,31 @@ const ProductDetail = () => {
     return `/src/assets/${path.replace("assets/", "")}`;
   };
 
-  // Add product to wishlist
-  const addToWishlist = (product) => {
-    const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+  const addToWishlist = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/products/${product.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            isFavourite: true,
+          }),
+        }
+      );
 
-    // Prevent adding the same product again
-    if (!savedWishlist.some(item => item.id === product.id)) {
-      savedWishlist.push(product);
-      localStorage.setItem("wishlist", JSON.stringify(savedWishlist));
-      alert("Product added to wishlist!");
-    } else {
-      alert("Product is already in your wishlist.");
+      if (!response.ok) {
+        throw new Error("Failed to add to wishlisr");
+      }
+
+      const updatedProduct = await response.json();
+      alert("added to wishlist");
+      return updatedProduct;
+    } catch (error) {
+      console.log(`http://localhost:3000/products/${product.id}`);
+      alert("Error adding to wishlist");
     }
   };
 
@@ -45,17 +59,12 @@ const ProductDetail = () => {
         }
         const data = await response.json();
 
-        // Prepare product with images
         const productWithFixedImages = {
           ...data,
           images: [
             getCorrectImagePath(data.image1),
             getCorrectImagePath(data.image2),
-            // getCorrectImagePath(data.image1), // Duplicate for testing
-            // getCorrectImagePath(data.image2), // Duplicate for testing
-            // getCorrectImagePath(data.image1), // Duplicate for testing
-            // getCorrectImagePath(data.image2), // Duplicate for testing
-          ].filter(Boolean), // Filter out null/undefined
+          ].filter(Boolean),
         };
         setProduct(productWithFixedImages);
       } catch (err) {
@@ -79,7 +88,7 @@ const ProductDetail = () => {
       );
       if (response.ok) {
         alert("Product deleted successfully");
-        navigate(-1); // Go back to the previous page
+        navigate(-1);
       } else {
         alert("Failed to delete product");
       }
@@ -115,19 +124,19 @@ const ProductDetail = () => {
           </ul>
           <img src={paymentImage} alt="Payment" />
 
-          <button
-            className={styles.addToWishlistButton}
-            onClick={() => addToWishlist(product)}>
-            Add to Wishlist
-          </button>
-
-          {isAdmin && (
-            <div className={styles.adminControls}>
+          <div className={styles.adminControls}>
+            <button
+              className={styles.addToWishlistButton}
+              onClick={addToWishlist}
+            >
+              Add to Wishlist
+            </button>
+            {isAdmin && (
               <button className={styles.deleteButton} onClick={deleteProduct}>
                 Delete Product
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
       <FooterTop />

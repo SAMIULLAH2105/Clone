@@ -1,28 +1,43 @@
-import React from 'react';
-// import styles from '..ContactUsTwo.module.css'; // Importing our module CSS
-import styles from '../styles/ContactUsTwo.module.css'
+import styles from "../styles/ContactUsTwo.module.css";
 
-function ContactUss() {
+
+const handleClick = () => {
+  const whatsappNumber = "923363653236"; // Your WhatsApp number
+  const message = "Hello! I have a question."; // default message
+  const encodedMessage = encodeURIComponent(message);
+  const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  window.open(url, "_blank");
+};
+
+function ContactUs({
+  heading = { heading },
+  description = { description },
+  Email = { Email },
+
+  Address = { Address },
+
+  Phone = { Phone },
+}) {
   return (
     <div className={styles.container}>
-      <h2>Contact Us</h2>
-      <p >to find out more about how we can assist you with your engineering equipment needs. Our team is ready to provide you with personalized attention and help you select the best solutions for your requirements.</p>
+      <h2>{heading}</h2>
+      <p>{description}</p>
       <div className={styles.contactInfo}>
         <div className={styles.contactItem}>
           <span className="material-icons">Email</span>
-          <span>stormmachinery@163.com</span>
+          <span>{Email}</span>
         </div>
         <div className={styles.contactItem}>
           <span className="material-icons">Address</span>
-          <span>Mingsheng Building, Jinan City, Shandong Province</span>
+          <span>{Address}</span>
         </div>
-        <div className={styles.contactItem}>
+        <div className={styles.contactItem} onClick={handleClick}>
           <span className="material-icons">Phone</span>
-          <span>+86 150 6612 2602</span>
+          <span>{Phone}</span>
         </div>
       </div>
     </div>
   );
 }
 
-export default ContactUss;
+export default ContactUs;

@@ -4,19 +4,16 @@ import CardComponent from "../components/CardComponent";
 import FooterTop from "../components/FooterTop";
 
 function ProductPage() {
-  const location = useLocation(); // Access the current URL
-  const [products, setProducts] = useState([]); // State to store products
+  const location = useLocation(); 
+  const [products, setProducts] = useState([]); 
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        // Extract the search query from the URL
         const searchParams = new URLSearchParams(location.search);
         const searchQuery = searchParams.get("search") || "";
-
-        // Fetch products from the backend based on the search query
         const response = await fetch(
           `http://localhost:3000/products?search=${encodeURIComponent(
             searchQuery
@@ -27,16 +24,16 @@ function ProductPage() {
         }
 
         const data = await response.json();
-        setProducts(data); // Update the products state with fetched data
+        setProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
-        setLoading(false); // Stop the loading indicator
+        setLoading(false);
       }
     };
 
     fetchProducts();
-  }, [location.search]); // Re-run the effect when the search query changes
+  }, [location.search]); 
 
   return (
     <>

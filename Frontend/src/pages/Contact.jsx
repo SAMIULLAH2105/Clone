@@ -1,20 +1,20 @@
-import React from 'react';
-import ContactForm from '../components/ContactForm';
-import ContactUs from '../components/ContactUs';
-import FooterTop from '../components/FooterTop';
-import ContactUss from '../components/ContactUsTwo';
-
+import ContactForm from "../components/ContactForm";
+import FooterTop from "../components/FooterTop";
+import ContactUs from "../components/ContactUsTwo";
 
 function Contact() {
   return (
-    
     <div className="contact">
-      <ContactUss/>
-      
-      <ContactForm heading={"PLEASE CONTACT US"}/>
-      <FooterTop/>
+      <ContactUs
+        heading="Get in Touch with Storm Machinery"
+        description="Discover tailored engineering solutions for your needs."
+        Email="stormmachinery@163.com"
+        Address="Mingsheng Building, Jinan City, Shandong Province"
+        Phone="+86 150 6612 2602"
+      />
+      <ContactForm heading={"PLEASE CONTACT US"} />
+      <FooterTop />
     </div>
-    
   );
 }
 

@@ -13,13 +13,7 @@ const Navbar = ({ onSearch }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
-  const [wishlist, setWishlist] = useState([]); 
-
-  useEffect(() => {
-    // Fetch wishlist from localStorage
-    const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-    setWishlist(savedWishlist);
-  }, []);
+ 
 
   const handleNavToggle = () => {
     setIsNavOpen((prevState) => !prevState);
@@ -55,11 +49,16 @@ const Navbar = ({ onSearch }) => {
     }
   };
 
-  const handleWishlistToggle = () => {
-    navigate("/wishlist");
-  };
 
-  const navItems = ["Home", "About", "Products", "Services", "Contact", "FAQ"];
+  const navItems = [
+    "Home",
+    "About",
+    "Products",
+    "Services",
+    "Contact",
+    "FAQ",
+    "WishList",
+  ];
 
   return (
     <header className={styles.navbar}>
@@ -136,29 +135,6 @@ const Navbar = ({ onSearch }) => {
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-          </button>
-
-          <button
-            className={styles.wishlistButton}
-            aria-label="Wishlist"
-            onClick={handleWishlistToggle}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M12 21C12 21 5 13 5 8C5 5.33333 7.33333 3 10 3C11.3333 3 12 3.33333 12 5C12 3.33333 12.6667 3 14 3C16.6667 3 19 5.33333 19 8C19 13 12 21 12 21Z" />
-            </svg>
-            {/* Wishlist count */}
-            {wishlist.length > 0 && (
-              <span className={styles.wishlistCount}>{wishlist.length}</span>
-            )}
           </button>
         </div>
       </nav>
